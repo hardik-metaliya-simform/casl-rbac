@@ -7,8 +7,8 @@ import {
   Body,
   Param,
   UseGuards,
+  ParseUUIDPipe,
 } from '@nestjs/common';
-import { ParseUUIDPipe } from '@nestjs/common';
 import { PoliciesGuard } from '../rbac/guards/policies.guard';
 import { CheckPermission } from '../rbac/decorators/check-permission.decorator';
 import { AuthGuard } from '@nestjs/passport';

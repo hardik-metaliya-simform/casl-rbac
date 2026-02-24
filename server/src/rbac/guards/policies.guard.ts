@@ -11,8 +11,8 @@ import { CaslAbilityFactory } from '../casl-ability.factory';
 @Injectable()
 export class PoliciesGuard implements CanActivate {
   constructor(
-    private reflector: Reflector,
-    private abilityFactory: CaslAbilityFactory,
+    private readonly reflector: Reflector,
+    private readonly abilityFactory: CaslAbilityFactory,
   ) {}
 
   async canActivate(context: ExecutionContext) {
@@ -53,7 +53,7 @@ export class PoliciesGuard implements CanActivate {
     if (user.username === 'hardik') return true;
 
     const ok = ability.can(action, moduleName);
-    console.log(ok);
+
     if (!ok) throw new ForbiddenException('Access denied');
     return true;
   }

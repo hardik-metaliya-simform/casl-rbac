@@ -7,9 +7,11 @@ import { AppModuleModel } from '../sequelize/models/app.module.model';
 @Injectable()
 export class RolesService {
   constructor(
-    @InjectModel(RoleModel) private rolesRepo: typeof RoleModel,
-    @InjectModel(PermissionModel) private permsRepo: typeof PermissionModel,
-    @InjectModel(AppModuleModel) private modulesRepo: typeof AppModuleModel,
+    @InjectModel(RoleModel) private readonly rolesRepo: typeof RoleModel,
+    @InjectModel(PermissionModel)
+    private readonly permsRepo: typeof PermissionModel,
+    @InjectModel(AppModuleModel)
+    private readonly modulesRepo: typeof AppModuleModel,
   ) {}
 
   listRoles() {
